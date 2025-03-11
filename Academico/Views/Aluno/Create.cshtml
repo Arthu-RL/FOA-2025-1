@@ -1,4 +1,9 @@
 ﻿@model Academico.Models.AlunoViewModel
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
 @{
     ViewData["Title"] = "Student creation Page";
 }
@@ -8,62 +13,71 @@
     <div class="panel-body">
         <form asp-controller="Aluno" asp-action="New" method="post">
             <div class="col-md-8">
-                
                 <div class="form-group">
                     <label asp-for="Name" class="control-label"></label>
-                    <input asp-for="Name" type="text" class="form-control" value="LEOZAO" placeholder="Nome do Aluno">
+                    <input asp-for="Name" type="text" class="form-control" placeholder="Nome do Aluno" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
                     <label asp-for="Email" class="control-label"></label>
-                    <input asp-for="Email" type="email" class="form-control" value="LEOZAO@leozao.com" placeholder="Email">
+                    <input asp-for="Email" type="email" class="form-control" placeholder="Email" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
                     <label asp-for="PasswordHash" class="control-label">Senha</label>
-                    <input asp-for="PasswordHash" type="password" value="LEOZAO" class="form-control" placeholder="Senha">
+                    <input asp-for="PasswordHash" type="password" class="form-control" placeholder="Senha" />
+                    <span asp-validation-for="PasswordHash" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
                     <label asp-for="Telefone" class="control-label"></label>
-                    <input asp-for="Telefone" type="text" value="LEOZAO" class="form-control" placeholder="Telefone">
+                    <input asp-for="Telefone" type="text" class="form-control" placeholder="Telefone" />
+                    <span asp-validation-for="Telefone" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
                     <label asp-for="Endereco" class="control-label"></label>
-                    <input asp-for="Endereco" type="text" value="LEOZAO" class="form-control" placeholder="Endereço">
+                    <input asp-for="Endereco" type="text" class="form-control" placeholder="Endereço" />
+                    <span asp-validation-for="Endereco" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
                     <label asp-for="Complemento" class="control-label"></label>
-                    <input asp-for="Complemento" type="text" value="LEOZAO" class="form-control" placeholder="Complemento">
+                    <input asp-for="Complemento" type="text" class="form-control" placeholder="Complemento" />
+                    <span asp-validation-for="Complemento" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
                     <label asp-for="Bairro" class="control-label"></label>
-                    <input asp-for="Bairro" type="text" value="LEOZAO" class="form-control" placeholder="Bairro">
+                    <input asp-for="Bairro" type="text" class="form-control" placeholder="Bairro" />
+                    <span asp-validation-for="Bairro" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
                     <label asp-for="Municipio" class="control-label"></label>
-                    <input asp-for="Municipio" type="text" value="LEOZAO" class="form-control" placeholder="Município">
+                    <input asp-for="Municipio" type="text" class="form-control" placeholder="Município" />
+                    <span asp-validation-for="Municipio" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
                     <label asp-for="Uf" class="control-label"></label>
-                    <input asp-for="Uf" type="text" value="LEOZAO" class="form-control" placeholder="UF">
+                    <input asp-for="Uf" type="text" class="form-control" placeholder="UF" />
+                    <span asp-validation-for="Uf" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
                     <label asp-for="Cep" class="control-label"></label>
-                    <input asp-for="Cep" type="text" value="LEOZAO" class="form-control" placeholder="CEP">
+                    <input asp-for="Cep" type="text" class="form-control" placeholder="CEP" />
+                    <span asp-validation-for="Cep" class="text-danger"></span>
                 </div>
 
                 <button type="submit" class="btn btn-primary mt-3">Criar Aluno</button>
 
                 <div class="form-group mt-3">
                     <input type="submit" class="btn btn-success" value="Finalizar Cadastro" />
-                    <a asp-controller="Aluno"  asp-action="List" class="btn btn-info">Retornar à lista de Alunos</a>
+                    <a asp-controller="Aluno" asp-action="List" class="btn btn-info">Retornar à lista de Alunos</a>
                 </div>
             </div>
         </form>
