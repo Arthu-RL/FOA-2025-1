@@ -1,0 +1,71 @@
+﻿@model Academico.Models.AlunoViewModel
+@{
+    ViewData["Title"] = "Student creation Page";
+}
+
+<h3>Aluno</h3>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <form asp-controller="Aluno" asp-action="New" method="post">
+            <div class="col-md-8">
+                
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" type="text" class="form-control" value="LEOZAO" placeholder="Nome do Aluno">
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" type="email" class="form-control" value="LEOZAO@leozao.com" placeholder="Email">
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="PasswordHash" class="control-label">Senha</label>
+                    <input asp-for="PasswordHash" type="password" value="LEOZAO" class="form-control" placeholder="Senha">
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Telefone" class="control-label"></label>
+                    <input asp-for="Telefone" type="text" value="LEOZAO" class="form-control" placeholder="Telefone">
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Endereco" class="control-label"></label>
+                    <input asp-for="Endereco" type="text" value="LEOZAO" class="form-control" placeholder="Endereço">
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Complemento" class="control-label"></label>
+                    <input asp-for="Complemento" type="text" value="LEOZAO" class="form-control" placeholder="Complemento">
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Bairro" class="control-label"></label>
+                    <input asp-for="Bairro" type="text" value="LEOZAO" class="form-control" placeholder="Bairro">
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Municipio" class="control-label"></label>
+                    <input asp-for="Municipio" type="text" value="LEOZAO" class="form-control" placeholder="Município">
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Uf" class="control-label"></label>
+                    <input asp-for="Uf" type="text" value="LEOZAO" class="form-control" placeholder="UF">
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Cep" class="control-label"></label>
+                    <input asp-for="Cep" type="text" value="LEOZAO" class="form-control" placeholder="CEP">
+                </div>
+
+                <button type="submit" class="btn btn-primary mt-3">Criar Aluno</button>
+
+                <div class="form-group mt-3">
+                    <input type="submit" class="btn btn-success" value="Finalizar Cadastro" />
+                    <a asp-controller="Aluno"  asp-action="List" class="btn btn-info">Retornar à lista de Alunos</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Academico.Models.AlunoViewModel>
+
+@{
+    ViewData["Title"] = "Listagem de alunos";
+}
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Cadastrar Novo</a>
+</p>
+
+<div class="card">
+    <div class="card-header bg-primary text-white text-center">
+        <h1>@ViewData["Title"]</h1>
+    </div>
+    <div class="card-body">
+        <table class="table table-striped" id="tabela-alunos">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Name)</th>
+                    <th>@Html.DisplayNameFor(model => model.Email)</th>
+                    <th>@Html.DisplayNameFor(model => model.Telefone)</th>
+                    <th>@Html.DisplayNameFor(model => model.Endereco)</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var aluno in Model)
+                {
+                    <tr>
+                        <td>@aluno.Name</td>
+                        <td>@aluno.Email</td>
+                        <td>@aluno.Telefone</td>
+                        <td>@aluno.Endereco</td>
+                        <td>
+                            <a asp-controller="Aluno" asp-action="Edit" asp-route-id="@aluno.Id" class="btn btn-warning btn-sm">Editar</a>
+                            <a asp-controller ="Aluno" asp-action="Details" asp-route-id="@aluno.Id" class="btn btn-info btn-sm">Detalhes</a>
+                            <a asp-controller="Aluno" asp-action="Delete" asp-route-id="@aluno.Id" class="btn btn-danger btn-sm">Excluir</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
